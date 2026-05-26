@@ -11,7 +11,6 @@ try:
     driver.get('https://www.timeanddate.com/weather/')
     sleep(2) # wait 2 seconds
     driver.get('https://www.timeanddate.com/weather/')
-
 except Exception as e:
     print(f"An exception occurred: {type(e).__name__} {e}")
 
