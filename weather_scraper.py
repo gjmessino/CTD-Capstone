@@ -1,4 +1,5 @@
 from time import sleep
+import pandas as pd
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service as ChromeService
 from webdriver_manager.chrome import ChromeDriverManager
@@ -13,7 +14,19 @@ try:
 except Exception as e:
     print(f"An exception occurred: {type(e).__name__} {e}")
 
-nav_bar = driver.find_element(By.CSS_SELECTOR, 'div.my-city__item')
-local_url = nav_bar.get_attribute('href')
+weather_table = driver.find_elements(By.CSS_SELECTOR, 'tbody')
+results = []
+for row in weather_table: #get each row in the table
+    name_links = row.find_elements(By.CSS_SELECTOR, 'a')
+    times = row.find_elements(By.CSS_SELECTOR, 'td.r')
+    temps = row.find_elements(By.CSS_SELECTOR, 'td.rbi')
+    for city in name_links: # break down 3 cities in each row
+        link = city.get_attribute('href')
+        location = city.text
+        info= {"City" : location,
+               "Link" : link}
+        results.append(info)
 
+df = pd.DataFrame(info)
+print(df.head())
 driver.quit()
