@@ -51,22 +51,14 @@ try:
 
 # Cleaning Data
     for title, df in df_dict.items():  
-
-        print(f"Processing and exporting dataset: {title}")
-
-        # 1. Strip out '°F' or whitespace, then convert to numeric values safely
         df['Temperature F'] = df['Temperature F'].str.replace('°F', '', regex=False).str.strip()
         df['Temperature F'] = pd.to_numeric(df['Temperature F'], errors='coerce')
-        
-        # 2. Now the math will work perfectly!
         df['Temperature C'] = (df['Temperature F'] - 32) * (5/9)
-        
-        # 3. Convert time and handle missing/duplicate data (Fixed column name to 'Temperature F')
-        df['Time'] = pd.to_datetime(df['Time'] + f' {pd.Timestamp.now().year}', format='%A, %I:%M %p %Y', errors='coerce')
+
+        df['Time'] = pd.to_datetime(df['Time'] + f' {pd.Timestamp.now().year}', format='%a %I:%M %p %Y', errors='coerce')
         df.dropna(subset=['City', 'Temperature F', 'Time'], inplace=True)
-        df.drop_duplicates(subset='City', keep='first', inplace=True)
 # Exporting Data to CSV
-        csv_name = f"./{title}.csv"
+        csv_name = (f"./{title}.csv")
         df.to_csv(csv_name, index=False)
         table_name = "".join(c if c.isalnum() else "_" for c in title)
         table_name = table_name.strip("_")
@@ -81,17 +73,17 @@ try:
                                  link TEXT,
                                  time TEXT,
                                  temperatureF TEXT,
-                                 temperatureC TEXT,
+                                 temperatureC TEXT
                                  )""")
                 cursor.execute(sql_statement)
                 
                 sql_statement2 = (f"""
                                   INSERT INTO {table_name}
-                                  (city,link,time,temperature)
+                                  (city,link,time,temperatureF,temperatureC)
                                   VALUES (?,?,?,?,?)
                                   """)
                 for _, row in df.iterrows():
-                    cursor.execute(sql_statement2, (title, df['City','Link','Time','Temperature F','Temperature C']))
+                    cursor.execute(sql_statement2, (row['City'], row['Link'], str(row['Time']), row['Temperature F'], row['Temperature C']))
         except sqlite3.Error as e:
             print(f'An error occurred: {e}')
 
