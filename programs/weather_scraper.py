@@ -5,6 +5,7 @@ from selenium.webdriver.chrome.service import Service as ChromeService
 from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.common.by import By
 import sqlite3
+from geopy.geocoders import Nominatim
 
 def get_table_contents(link):
         driver.get(link)
@@ -37,6 +38,16 @@ def get_alt_table(link):
         links_list.append([item.text,new_link])
     return links_list
 
+def get_coords(city):
+    sleep(1)
+    try:
+        loc = geolocator.geocode(city, timeout=10)  # increase to 10 seconds
+        if loc:
+            return pd.Series([loc.latitude, loc.longitude])
+    except Exception:
+        pass
+    return pd.Series([None, None])
+
 driver = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install()))
                 
 try:
@@ -47,47 +58,59 @@ try:
         title = item[0]
         df = get_table_contents(item[1])
         df_dict[title] = df
-    df_dict['Most Popular'] = get_table_contents(main_link)
-
-# Cleaning Data
-    for title, df in df_dict.items():  
-        df['Temperature F'] = df['Temperature F'].str.replace('°F', '', regex=False).str.strip()
-        df['Temperature F'] = pd.to_numeric(df['Temperature F'], errors='coerce')
-        df['Temperature C'] = (df['Temperature F'] - 32) * (5/9)
-
-        df['Time'] = pd.to_datetime(df['Time'] + f' {pd.Timestamp.now().year}', format='%a %I:%M %p %Y', errors='coerce')
-        df.dropna(subset=['City', 'Temperature F', 'Time'], inplace=True)
-# Exporting Data to CSV
-        csv_name = (f"./db/{title}.csv")
-        df.to_csv(csv_name, index=False)
-        table_name = "".join(c if c.isalnum() else "_" for c in title)
-        table_name = table_name.strip("_")
-       
-        # Make SQL
-        try:
-            with  sqlite3.connect("./weather_data.db") as conn: 
-                cursor = conn.cursor()
-                sql_statement = (f"""
-                                 CREATE TABLE IF NOT EXISTS {table_name} (
-                                 city TEXT PRIMARY KEY,
-                                 link TEXT,
-                                 time TEXT,
-                                 temperatureF TEXT,
-                                 temperatureC TEXT
-                                 )""")
-                cursor.execute(sql_statement)
-                
-                sql_statement2 = (f"""
-                                  INSERT INTO {table_name}
-                                  (city,link,time,temperatureF,temperatureC)
-                                  VALUES (?,?,?,?,?)
-                                  """)
-                for _, row in df.iterrows():
-                    cursor.execute(sql_statement2, (row['City'], row['Link'], str(row['Time']), row['Temperature F'], row['Temperature C']))
-        except sqlite3.Error as e:
-            print(f'An error occurred: {e}')
-
 except Exception as e:
     print(f"An exception occurred: {type(e).__name__} {e}")
 finally:
     driver.quit()
+
+# Cleaning/Adding Data
+geolocator = Nominatim(user_agent="weather_app")
+    
+for title, df in df_dict.items():  
+    df['Temperature F'] = df['Temperature F'].str.replace('°F', '', regex=False).str.strip()
+    df['Temperature F'] = pd.to_numeric(df['Temperature F'], errors='coerce')
+    df['Temperature C'] = (df['Temperature F'] - 32) * (5/9)
+
+     # Replace your location block with this:
+    df[['Longitude','Latitude']] = df['City'].apply(get_coords)
+
+    df['Time'] = pd.to_datetime(df['Time'] + f' {pd.Timestamp.now().year}', format='%a %I:%M %p %Y', errors='coerce')
+    df.dropna(subset=['City', 'Temperature F', 'Time'], inplace=True)
+# Exporting Data to CSV
+    csv_name = (f"./db/{title}.csv")
+    df.to_csv(csv_name, index=False)
+    table_name = "".join(c if c.isalnum() else "_" for c in title)
+    table_name = table_name.strip("_")
+       
+# Make SQL
+    try:
+        with  sqlite3.connect("./weather_data.db") as conn: 
+            cursor = conn.cursor()
+            sql_statement = (f"""
+                             CREATE TABLE IF NOT EXISTS {table_name} (
+                             city TEXT PRIMARY KEY,
+                             link TEXT,
+                             time TEXT,
+                             temperatureF TEXT,
+                             temperatureC TEXT,
+                             longitude FLOAT,
+                             latitude FLOAT
+                             )""")
+            cursor.execute(sql_statement)
+                
+            sql_statement2 = (f"""
+                              INSERT INTO {table_name}
+                              (city,link,time,temperatureF,temperatureC,longitude,latitude)
+                              VALUES (?,?,?,?,?,?,?)
+                              """)
+            for _, row in df.iterrows():
+                cursor.execute(sql_statement2, (row['City'], 
+                                                row['Link'], 
+                                                str(row['Time']), 
+                                                row['Temperature F'], 
+                                                row['Temperature C'], 
+                                                row['Longitude'], 
+                                                row['Latitude']))
+                
+    except sqlite3.Error as e:
+        print(f'An error occurred: {e}')
