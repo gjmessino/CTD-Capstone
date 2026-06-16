@@ -4,7 +4,7 @@ import pandas as pd
 import plotly.express as px
 
 # Retrieve Data
-conn = st.connection("./weather_data.db","sql")
+conn = st.connection("weather_data.db","sql")
 capitals = conn.query("SELECT * FROM Capitals__215;", ttl=600)
 most_popular = conn.query("SELECT * FROM Most_Popular__143;", ttl=600)
 least_popular = conn.query("SELECT * FROM Least_Popular__472;", ttl=600)

@@ -75,7 +75,7 @@ for title, df in df_dict.items():
     df[['Longitude','Latitude']] = df['City'].apply(get_coords)
 
     df['Time'] = pd.to_datetime(df['Time'] + f' {pd.Timestamp.now().year}', format='%a %I:%M %p %Y', errors='coerce')
-    df.dropna(subset=['City', 'Temperature F', 'Time'], inplace=True)
+    df.dropna(subset=['City', 'Temperature F', 'Time', 'Longitude', 'Latitude'], inplace=True)
 # Exporting Data to CSV
     csv_name = (f"./db/{title}.csv")
     df.to_csv(csv_name, index=False)
@@ -91,8 +91,8 @@ for title, df in df_dict.items():
                              city TEXT PRIMARY KEY,
                              link TEXT,
                              time TEXT,
-                             temperatureF TEXT,
-                             temperatureC TEXT,
+                             temperatureF FLOAT,
+                             temperatureC FLOAT,
                              longitude FLOAT,
                              latitude FLOAT
                              )""")
