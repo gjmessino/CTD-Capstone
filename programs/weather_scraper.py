@@ -8,25 +8,33 @@ import sqlite3
 from geopy.geocoders import Nominatim
 
 def get_table_contents(link):
+    try:
         driver.get(link)
         sleep(2)
         weather_table = driver.find_elements(By.CSS_SELECTOR, 'tbody tr')
         results = []
-        for row in weather_table: #get each row in the table
-            city = row.find_elements(By.CSS_SELECTOR, 'td a')
-            times = row.find_elements(By.CSS_SELECTOR, 'td.r')
-            temps = row.find_elements(By.CSS_SELECTOR, 'td.rbi')
-            if not city or not times or not temps:
+        for row in weather_table:
+            cities = row.find_elements(By.CSS_SELECTOR, 'td a')
+            times  = row.find_elements(By.CSS_SELECTOR, 'td.r')
+            temps  = row.find_elements(By.CSS_SELECTOR, 'td.rbi')
+            if not cities or not times or not temps:
                 continue
-            info ={
-                'City' : city[0].text,
-                'Link' : city[0].get_attribute('href'),
-                'Time' : times[0].text,
-                'Temperature F': temps[0].text
-            }
-            results.append(info)
+            for i in range(len(cities)):  # iterate all columns in the row
+                if i >= len(times) or i >= len(temps):
+                    break
+                info = {
+                    'City':          cities[i].text,
+                    'Link':          cities[i].get_attribute('href'),
+                    'Time':          times[i].text,
+                    'Temperature F': temps[i].text
+                }
+                results.append(info)
         df = pd.DataFrame(results)
+        df = df.sort_values(by='City', ascending=True)
         return df
+    except Exception as e:
+        print(f"Failed to scrape {link}: {e}")
+        return pd.DataFrame()
 
 def get_alt_table(link):
     driver.get(link)
@@ -51,7 +59,7 @@ def get_coords(city):
 driver = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install()))
                 
 try:
-    main_link= "https://www.timeanddate.com/weather/"
+    main_link = "https://www.timeanddate.com/weather/"
     alt_links_list = get_alt_table(main_link)
     df_dict = {}
     for item in alt_links_list:
@@ -67,6 +75,9 @@ finally:
 geolocator = Nominatim(user_agent="weather_app")
     
 for title, df in df_dict.items():  
+    if df.empty:
+        print(f"Skipping {title} — no data")
+        continue
     df['Temperature F'] = df['Temperature F'].str.replace('°F', '', regex=False).str.strip()
     df['Temperature F'] = pd.to_numeric(df['Temperature F'], errors='coerce')
     df['Temperature C'] = (df['Temperature F'] - 32) * (5/9)

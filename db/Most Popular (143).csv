@@ -1,48 +1,93 @@
 City,Link,Time,Temperature F,Temperature C,Longitude,Latitude
-Accra,https://www.timeanddate.com/weather/ghana/accra,2026-01-01 23:31:00,81,27.222222222222225,5.5571096,-0.2012376
-Addis Ababa,https://www.timeanddate.com/weather/ethiopia/addis-ababa,2026-01-01 02:31:00,61,16.11111111111111,9.0358119,38.7524315
-Adelaide,https://www.timeanddate.com/weather/australia/adelaide,2026-01-01 09:01:00,64,17.77777777777778,-34.9281805,138.5999312
-Algiers,https://www.timeanddate.com/weather/algeria/algiers,2026-01-01 00:31:00,74,23.333333333333336,36.7729333,3.0588445
-Almaty,https://www.timeanddate.com/weather/kazakstan/almaty,2026-01-01 04:31:00,64,17.77777777777778,43.2363924,76.9457275
-Amman,https://www.timeanddate.com/weather/jordan/amman,2026-01-01 02:31:00,70,21.11111111111111,31.9515694,35.9239625
-Amsterdam,https://www.timeanddate.com/weather/netherlands/amsterdam,2026-01-01 01:31:00,59,15.0,52.3730796,4.8924534
-Anadyr,https://www.timeanddate.com/weather/russia/anadyr,2026-01-01 11:31:00,61,16.11111111111111,64.7316875,177.5060925
-Anchorage,https://www.timeanddate.com/weather/usa/anchorage,2026-01-01 15:31:00,62,16.666666666666668,61.2163129,-149.894852
-Ankara,https://www.timeanddate.com/weather/turkey/ankara,2026-01-01 02:31:00,59,15.0,39.9207759,32.8540497
-Antananarivo,https://www.timeanddate.com/weather/madagascar/antananarivo,2026-01-01 02:31:00,52,11.11111111111111,-18.9100122,47.5255809
-Asuncion,https://www.timeanddate.com/weather/paraguay/asuncion,2026-01-01 20:31:00,54,12.222222222222223,-25.2800459,-57.6343814
-Athens,https://www.timeanddate.com/weather/greece/athens,2026-01-01 02:31:00,80,26.666666666666668,33.9597677,-83.376398
-Atlanta,https://www.timeanddate.com/weather/usa/atlanta,2026-01-01 19:31:00,69,20.555555555555557,33.7544657,-84.3898151
-Auckland,https://www.timeanddate.com/weather/new-zealand/auckland,2026-01-01 11:31:00,59,15.0,-36.852095,174.7631803
-Baghdad,https://www.timeanddate.com/weather/iraq/baghdad,2026-01-01 02:31:00,84,28.88888888888889,33.3061701,44.3872213
-Bangkok,https://www.timeanddate.com/weather/thailand/bangkok,2026-01-01 06:31:00,79,26.11111111111111,13.7524938,100.4935089
-Barcelona,https://www.timeanddate.com/weather/spain/barcelona,2026-01-01 01:31:00,73,22.77777777777778,41.3825802,2.177073
-Beijing,https://www.timeanddate.com/weather/china/beijing,2026-01-01 07:31:00,66,18.88888888888889,39.9057136,116.3912972
-Belgrade,https://www.timeanddate.com/weather/serbia/belgrade,2026-01-01 01:31:00,63,17.22222222222222,44.8153318,20.4456588
-Bengaluru,https://www.timeanddate.com/weather/india/bengaluru,2026-01-01 05:01:00,72,22.22222222222222,12.9767936,77.590082
-Berlin,https://www.timeanddate.com/weather/germany/berlin,2026-01-01 01:31:00,57,13.88888888888889,52.5173885,13.3951309
-Bogota,https://www.timeanddate.com/weather/colombia/bogota,2026-01-01 18:31:00,63,17.22222222222222,4.6533817,-74.0836331
-Boston,https://www.timeanddate.com/weather/usa/boston,2026-01-01 19:31:00,77,25.0,42.3588336,-71.0578303
-Brasilia,https://www.timeanddate.com/weather/brazil/brasilia,2026-01-01 20:31:00,72,22.22222222222222,-10.3333333,-53.2
-Brisbane,https://www.timeanddate.com/weather/australia/brisbane,2026-01-01 09:31:00,60,15.555555555555557,-27.4689623,153.0235009
-Brussels,https://www.timeanddate.com/weather/belgium/brussels,2026-01-01 01:31:00,59,15.0,50.8467372,4.352493
-Bucharest,https://www.timeanddate.com/weather/romania/bucharest,2026-01-01 02:31:00,63,17.22222222222222,44.4361414,26.102684
-Budapest,https://www.timeanddate.com/weather/hungary/budapest,2026-01-01 01:31:00,70,21.11111111111111,47.4813896,19.1457723
-Buenos Aires,https://www.timeanddate.com/weather/argentina/buenos-aires,2026-01-01 20:31:00,61,16.11111111111111,-34.6095579,-58.3887904
-Cairo,https://www.timeanddate.com/weather/egypt/cairo,2026-01-01 02:31:00,75,23.88888888888889,30.0443879,31.2357257
-Calgary,https://www.timeanddate.com/weather/canada/calgary,2026-01-01 17:31:00,57,13.88888888888889,51.0456064,-114.057541
-Canberra,https://www.timeanddate.com/weather/australia/canberra,2026-01-01 09:31:00,50,10.0,-35.2975906,149.1012676
-Cape Town,https://www.timeanddate.com/weather/south-africa/cape-town,2026-01-01 01:31:00,59,15.0,-33.9288301,18.4172197
-Caracas,https://www.timeanddate.com/weather/venezuela/caracas,2026-01-01 19:31:00,82,27.77777777777778,10.5060934,-66.9146008
-Casablanca,https://www.timeanddate.com/weather/morocco/casablanca,2026-01-01 00:31:00,71,21.666666666666668,33.5945144,-7.6200284
-Chicago,https://www.timeanddate.com/weather/usa/chicago,2026-01-01 18:31:00,71,21.666666666666668,41.8755616,-87.6244212
-Copenhagen,https://www.timeanddate.com/weather/denmark/copenhagen,2026-01-01 01:31:00,54,12.222222222222223,55.6867243,12.5700724
-Dallas,https://www.timeanddate.com/weather/usa/dallas,2026-01-01 18:31:00,89,31.666666666666668,32.7762719,-96.7968559
-Dar es Salaam,https://www.timeanddate.com/weather/tanzania/dar-es-salaam,2026-01-01 02:31:00,73,22.77777777777778,-6.8160837,39.2803583
-Darwin,https://www.timeanddate.com/weather/australia/darwin,2026-01-01 09:01:00,77,25.0,-12.46044,130.8410469
-Denver,https://www.timeanddate.com/weather/usa/denver,2026-01-01 17:31:00,94,34.44444444444444,39.7392364,-104.984862
-Detroit,https://www.timeanddate.com/weather/usa/detroit,2026-01-01 19:31:00,72,22.22222222222222,42.3315509,-83.0466403
-Dhaka,https://www.timeanddate.com/weather/bangladesh/dhaka,2026-01-01 05:31:00,84,28.88888888888889,23.7643863,90.3890144
-Doha,https://www.timeanddate.com/weather/qatar/doha,2026-01-01 02:31:00,93,33.88888888888889,25.3108807,51.5081812
-Dubai,https://www.timeanddate.com/weather/united-arab-emirates/dubai,2026-01-01 03:31:00,84,28.88888888888889,25.0742823,55.1885387
-Dublin,https://www.timeanddate.com/weather/ireland/dublin,2026-01-01 00:31:00,59,15.0,53.3493795,-6.2605593
+Accra,https://www.timeanddate.com/weather/ghana/accra,2026-01-01 02:16:00,79,26.11111111111111,5.5571096,-0.2012376
+Addis Ababa,https://www.timeanddate.com/weather/ethiopia/addis-ababa,2026-01-01 05:16:00,59,15.0,9.0358119,38.7524315
+Adelaide,https://www.timeanddate.com/weather/australia/adelaide,2026-01-01 11:46:00,66,18.88888888888889,-34.9281805,138.5999312
+Algiers,https://www.timeanddate.com/weather/algeria/algiers,2026-01-01 03:16:00,74,23.333333333333336,36.7729333,3.0588445
+Almaty,https://www.timeanddate.com/weather/kazakstan/almaty,2026-01-01 07:16:00,72,22.22222222222222,43.2363924,76.9457275
+Amman,https://www.timeanddate.com/weather/jordan/amman,2026-01-01 05:16:00,68,20.0,31.9515694,35.9239625
+Amsterdam,https://www.timeanddate.com/weather/netherlands/amsterdam,2026-01-01 04:16:00,59,15.0,52.3730796,4.8924534
+Anadyr,https://www.timeanddate.com/weather/russia/anadyr,2026-01-01 14:16:00,65,18.333333333333336,64.7316875,177.5060925
+Anchorage,https://www.timeanddate.com/weather/usa/anchorage,2026-01-01 18:16:00,65,18.333333333333336,61.2163129,-149.894852
+Ankara,https://www.timeanddate.com/weather/turkey/ankara,2026-01-01 05:16:00,54,12.222222222222223,39.9207759,32.8540497
+Antananarivo,https://www.timeanddate.com/weather/madagascar/antananarivo,2026-01-01 05:16:00,52,11.11111111111111,-18.9100122,47.5255809
+Asuncion,https://www.timeanddate.com/weather/paraguay/asuncion,2026-01-01 23:16:00,50,10.0,-25.2800459,-57.6343814
+Athens,https://www.timeanddate.com/weather/greece/athens,2026-01-01 05:16:00,73,22.77777777777778,33.9597677,-83.376398
+Atlanta,https://www.timeanddate.com/weather/usa/atlanta,2026-01-01 22:16:00,70,21.11111111111111,33.7544657,-84.3898151
+Auckland,https://www.timeanddate.com/weather/new-zealand/auckland,2026-01-01 14:16:00,61,16.11111111111111,-36.852095,174.7631803
+Baghdad,https://www.timeanddate.com/weather/iraq/baghdad,2026-01-01 05:16:00,84,28.88888888888889,33.3061701,44.3872213
+Bangkok,https://www.timeanddate.com/weather/thailand/bangkok,2026-01-01 09:16:00,86,30.0,13.7524938,100.4935089
+Barcelona,https://www.timeanddate.com/weather/spain/barcelona,2026-01-01 04:16:00,72,22.22222222222222,41.3825802,2.177073
+Beijing,https://www.timeanddate.com/weather/china/beijing,2026-01-01 10:16:00,74,23.333333333333336,39.9057136,116.3912972
+Belgrade,https://www.timeanddate.com/weather/serbia/belgrade,2026-01-01 04:16:00,57,13.88888888888889,44.8153318,20.4456588
+Bengaluru,https://www.timeanddate.com/weather/india/bengaluru,2026-01-01 07:46:00,73,22.77777777777778,12.9767936,77.590082
+Berlin,https://www.timeanddate.com/weather/germany/berlin,2026-01-01 04:16:00,52,11.11111111111111,52.5173885,13.3951309
+Bogota,https://www.timeanddate.com/weather/colombia/bogota,2026-01-01 21:16:00,55,12.777777777777779,4.6533817,-74.0836331
+Boston,https://www.timeanddate.com/weather/usa/boston,2026-01-01 22:16:00,73,22.77777777777778,42.3588336,-71.0578303
+Brasilia,https://www.timeanddate.com/weather/brazil/brasilia,2026-01-01 23:16:00,68,20.0,-10.3333333,-53.2
+Brisbane,https://www.timeanddate.com/weather/australia/brisbane,2026-01-01 12:16:00,68,20.0,-27.4689623,153.0235009
+Brussels,https://www.timeanddate.com/weather/belgium/brussels,2026-01-01 04:16:00,61,16.11111111111111,50.8467372,4.352493
+Bucharest,https://www.timeanddate.com/weather/romania/bucharest,2026-01-01 05:16:00,59,15.0,44.4361414,26.102684
+Budapest,https://www.timeanddate.com/weather/hungary/budapest,2026-01-01 04:16:00,68,20.0,47.4978789,19.0402383
+Buenos Aires,https://www.timeanddate.com/weather/argentina/buenos-aires,2026-01-01 23:16:00,57,13.88888888888889,-34.6095579,-58.3887904
+Cairo,https://www.timeanddate.com/weather/egypt/cairo,2026-01-01 05:16:00,73,22.77777777777778,30.0443879,31.2357257
+Calgary,https://www.timeanddate.com/weather/canada/calgary,2026-01-01 20:16:00,54,12.222222222222223,51.0456064,-114.057541
+Canberra,https://www.timeanddate.com/weather/australia/canberra,2026-01-01 12:16:00,55,12.777777777777779,-35.2975906,149.1012676
+Cape Town,https://www.timeanddate.com/weather/south-africa/cape-town,2026-01-01 04:16:00,54,12.222222222222223,-33.9288301,18.4172197
+Caracas,https://www.timeanddate.com/weather/venezuela/caracas,2026-01-01 22:16:00,81,27.222222222222225,10.5060934,-66.9146008
+Casablanca,https://www.timeanddate.com/weather/morocco/casablanca,2026-01-01 03:16:00,71,21.666666666666668,33.5945144,-7.6200284
+Chicago,https://www.timeanddate.com/weather/usa/chicago,2026-01-01 21:16:00,68,20.0,41.8755616,-87.6244212
+Copenhagen,https://www.timeanddate.com/weather/denmark/copenhagen,2026-01-01 04:16:00,54,12.222222222222223,55.6867243,12.5700724
+Dallas,https://www.timeanddate.com/weather/usa/dallas,2026-01-01 21:16:00,87,30.555555555555557,32.7762719,-96.7968559
+Dar es Salaam,https://www.timeanddate.com/weather/tanzania/dar-es-salaam,2026-01-01 05:16:00,73,22.77777777777778,-6.8160837,39.2803583
+Darwin,https://www.timeanddate.com/weather/australia/darwin,2026-01-01 11:46:00,84,28.88888888888889,-12.46044,130.8410469
+Denver,https://www.timeanddate.com/weather/usa/denver,2026-01-01 20:16:00,91,32.77777777777778,39.7392364,-104.984862
+Detroit,https://www.timeanddate.com/weather/usa/detroit,2026-01-01 22:16:00,66,18.88888888888889,42.3315509,-83.0466403
+Dhaka,https://www.timeanddate.com/weather/bangladesh/dhaka,2026-01-01 08:16:00,84,28.88888888888889,23.7643863,90.3890144
+Doha,https://www.timeanddate.com/weather/qatar/doha,2026-01-01 05:16:00,90,32.22222222222222,25.3108807,51.5081812
+Dubai,https://www.timeanddate.com/weather/united-arab-emirates/dubai,2026-01-01 06:16:00,82,27.77777777777778,25.0742823,55.1885387
+Dublin,https://www.timeanddate.com/weather/ireland/dublin,2026-01-01 03:16:00,59,15.0,53.3493795,-6.2605593
+New Delhi,https://www.timeanddate.com/weather/india/new-delhi,2026-01-01 20:16:00,76,24.444444444444446,28.6138954,77.2090057
+New Orleans,https://www.timeanddate.com/weather/usa/new-orleans,2026-01-01 04:16:00,78,25.555555555555557,29.9561422,-90.0733934
+New York,https://www.timeanddate.com/weather/usa/new-york,2026-01-01 20:16:00,67,19.444444444444446,40.7127281,-74.0060152
+Oslo,https://www.timeanddate.com/weather/norway/oslo,2026-01-01 23:16:00,52,11.11111111111111,59.9133301,10.7389701
+Ottawa,https://www.timeanddate.com/weather/canada/ottawa,2026-01-01 09:16:00,64,17.77777777777778,45.4208777,-75.6901106
+Paris,https://www.timeanddate.com/weather/france/paris,2026-01-01 04:16:00,63,17.22222222222222,48.8534951,2.3483915
+Perth,https://www.timeanddate.com/weather/australia/perth,2026-01-01 22:16:00,50,10.0,-31.9558967,115.8605784
+Philadelphia,https://www.timeanddate.com/weather/usa/philadelphia,2026-01-01 05:16:00,72,22.22222222222222,39.9527237,-75.1635262
+Phoenix,https://www.timeanddate.com/weather/usa/phoenix,2026-01-01 10:16:00,110,43.333333333333336,33.4484367,-112.074141
+Prague,https://www.timeanddate.com/weather/czech-republic/prague,2026-01-01 16:16:00,55,12.777777777777779,50.0874654,14.4212535
+Reykjavik,https://www.timeanddate.com/weather/iceland/reykjavik,2026-01-01 21:16:00,48,8.88888888888889,64.145981,-21.9422367
+Rio de Janeiro,https://www.timeanddate.com/weather/brazil/rio-de-janeiro,2026-01-01 22:16:00,66,18.88888888888889,-22.9110137,-43.2093727
+Riyadh,https://www.timeanddate.com/weather/saudi-arabia/riyadh,2026-01-01 07:16:00,84,28.88888888888889,24.638916,46.7160104
+Rome,https://www.timeanddate.com/weather/italy/rome,2026-01-01 05:16:00,70,21.11111111111111,41.8933203,12.4829321
+Salt Lake City,https://www.timeanddate.com/weather/usa/salt-lake-city,2026-01-01 09:16:00,92,33.333333333333336,40.7596198,-111.886797
+San Francisco,https://www.timeanddate.com/weather/usa/san-francisco,2026-01-01 05:16:00,67,19.444444444444446,37.7879363,-122.4075201
+San Juan,https://www.timeanddate.com/weather/puerto-rico/san-juan,2026-01-01 04:16:00,81,27.222222222222225,18.384239,-66.05344
+San Salvador,https://www.timeanddate.com/weather/el-salvador/san-salvador,2026-01-01 07:16:00,77,25.0,13.697629,-89.191156
+Santiago,https://www.timeanddate.com/weather/chile/santiago,2026-01-01 08:01:00,50,10.0,9.8694792,-83.7980749
+Santo Domingo,https://www.timeanddate.com/weather/dominican-republic/santo-domingo,2026-01-01 21:16:00,83,28.333333333333336,18.4713858,-69.8918436
+Seattle,https://www.timeanddate.com/weather/usa/seattle,2026-01-01 16:16:00,72,22.22222222222222,47.6038321,-122.330062
+Seoul,https://www.timeanddate.com/weather/south-korea/seoul,2026-01-01 07:46:00,84,28.88888888888889,37.5666791,126.9782914
+Shanghai,https://www.timeanddate.com/weather/china/shanghai,2026-01-01 10:16:00,82,27.77777777777778,31.2312707,121.4700152
+Singapore,https://www.timeanddate.com/weather/singapore/singapore,2026-01-01 05:16:00,86,30.0,1.357107,103.8194992
+Sofia,https://www.timeanddate.com/weather/bulgaria/sofia,2026-01-01 05:16:00,58,14.444444444444445,42.6977028,23.3217359
+St. John's,https://www.timeanddate.com/weather/canada/st-johns,2026-01-01 22:16:00,41,5.0,47.5646794,-52.7066964
+Stockholm,https://www.timeanddate.com/weather/sweden/stockholm,2026-01-01 03:16:00,55,12.777777777777779,59.3251172,18.0710935
+Suva,https://www.timeanddate.com/weather/fiji/suva,2026-01-01 07:16:00,78,25.555555555555557,-18.1415884,178.4421662
+Sydney,https://www.timeanddate.com/weather/australia/sydney,2026-01-01 19:16:00,64,17.77777777777778,-33.8698439,151.2082848
+São Paulo,https://www.timeanddate.com/weather/brazil/sao-paulo,2026-01-01 03:16:00,59,15.0,-23.5506507,-46.6333824
+Taipei,https://www.timeanddate.com/weather/taiwan/taipei,2026-01-01 21:16:00,90,32.22222222222222,25.0375198,121.5636796
+Tallinn,https://www.timeanddate.com/weather/estonia/tallinn,2026-01-01 03:16:00,55,12.777777777777779,59.437242,24.7572693
+Tashkent,https://www.timeanddate.com/weather/uzbekistan/tashkent,2026-01-01 03:16:00,78,25.555555555555557,41.3123363,69.2787079
+Tegucigalpa,https://www.timeanddate.com/weather/honduras/tegucigalpa,2026-01-01 19:16:00,75,23.88888888888889,14.1058135,-87.2047053
+Tehran,https://www.timeanddate.com/weather/iran/tehran,2026-01-01 04:16:00,70,21.11111111111111,35.6892523,51.3896004
+Tokyo,https://www.timeanddate.com/weather/japan/tokyo,2026-01-01 20:16:00,77,25.0,35.6768601,139.7638947
+Toronto,https://www.timeanddate.com/weather/canada/toronto,2026-01-01 10:16:00,70,21.11111111111111,43.6534817,-79.3839347
+Vancouver,https://www.timeanddate.com/weather/canada/vancouver,2026-01-01 12:16:00,70,21.11111111111111,49.2608724,-123.113952
+Vienna,https://www.timeanddate.com/weather/austria/vienna,2026-01-01 20:16:00,66,18.88888888888889,48.2083537,16.3725042
+Warsaw,https://www.timeanddate.com/weather/poland/warsaw,2026-01-01 22:16:00,50,10.0,52.2333742,21.0711489
+Washington DC,https://www.timeanddate.com/weather/usa/washington-dc,2026-01-01 21:16:00,75,23.88888888888889,38.8950982,-77.0363849
+Winnipeg,https://www.timeanddate.com/weather/canada/winnipeg,2026-01-01 05:16:00,69,20.555555555555557,49.8955367,-97.1384584
+Yangon,https://www.timeanddate.com/weather/myanmar/yangon,2026-01-01 23:16:00,79,26.11111111111111,16.7967129,96.1609916
+Zagreb,https://www.timeanddate.com/weather/croatia/zagreb,2026-01-01 22:16:00,63,17.22222222222222,45.8130967,15.9772795
+Zürich,https://www.timeanddate.com/weather/switzerland/zurich,2026-01-01 05:16:00,61,16.11111111111111,47.3744489,8.5410422
