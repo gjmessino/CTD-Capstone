@@ -14,3 +14,7 @@ table of information is on display at the bottom.
 
 With the side bar users can toggle through which data table they'd like to look at. They can also search their city (or any other) to 
 find the temperature.
+<img width="906" height="597" alt="Screenshot 2026-06-17 at 2 30 08 PM" src="<img width="344" height="403" alt="Screenshot 2026-06-17 at 2 30 24 PM" src="https://github.com/user-attachments/assets/b01c655f-8cb3-4798-a13a-e4a90d62e2d5" />" />
+
+![Uploading Screenshot 2026-06-17 at 2.30.24 PM.png…]()
+
