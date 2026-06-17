@@ -4,20 +4,20 @@ import pandas as pd
 import plotly.express as px
 
 def make_page(title, df):
-    st.title(f"Temperature Data for {title}")
+    st.subheader(f"Temperature Data for {title}")
     col1, col2 = st.columns(2)
     with col1:
-        st.subheader("Most Common Heat (Farenheit)")
         fig1 = px.histogram(df,
                             x = "temperatureF",
                             title = "Most Common Heat World Wide (Farenheit)")
+        fig1.update_traces(marker_color="purple")
         fig1.write_html('common_heatF.html')
         st.plotly_chart(fig1)
     with col2:
-        st.subheader("Most Common Heat (Celsius)")
         fig2 = px.histogram(df,
                             x = "temperatureC",
                             title = "Most Common Heat World Wide (Celsius)")
+        fig2.update_traces(marker_color="green")
         fig2.write_html('common_heatC.html')
         st.plotly_chart(fig2)
     
@@ -40,26 +40,42 @@ world_data.dropna(subset=['latitude', 'longitude', 'temperatureF'], inplace=True
 
 #Streamlit Set Up
 st.title("International Weather Report")
-st.header("Find the Weather in Your City")
-city_name =st.text_input("City")
-if city_name in world_data['city'].values:
-    city_info = world_data[world_data['city'] == city_name].iloc[0]
-    st.write(f"Temperature in {city_name}: {city_info['temperatureF']} °F / {city_info['temperatureC']} °C")
-    st.write(f"Last Updated: {city_info['time']}")
+st.write("Explore temperature data from cities around the world. " \
+         "The side bar allows you to select data sets or, " \
+            "to search for a city.")
 
-with st.sidebar:
-    st.header("Menu")
-    view_mode = st.sidebar.selectbox("Select View Mode",
-                                     ["World Data",
+fig = px.density_mapbox(
+    world_data, 
+    lat='longitude', 
+    lon='latitude', 
+    z='temperatureF',
+    radius=20,
+    center=dict(lat=37.78, lon=-122.41), 
+    zoom=1,
+    mapbox_style="open-street-map",
+    color_continuous_scale="Inferno" # Or use "RdBu_r" for hot-to-cold
+)
+st.plotly_chart(fig)
+
+view_mode = st.sidebar.selectbox("Select View Mode",
+                                     ["World Cities",
                                       "Capital Cities",
                                       "Most Popular Cities",
                                       "Least Popular Cities"])
-    if view_mode == "World Data":
-        df = world_data
-    elif view_mode == "Capital Cities":
-        df = capitals
-    elif view_mode == "Most Popular Cities":
-        df = most_popular
-    elif view_mode == "Least Popular Cities":
-        df = least_popular
-    make_page(view_mode, df)
+if view_mode == "World Cities":
+    df = world_data
+elif view_mode == "Capital Cities":
+    df = capitals
+elif view_mode == "Most Popular Cities":
+    df = most_popular
+elif view_mode == "Least Popular Cities":
+    df = least_popular
+make_page(view_mode, df)
+
+with st.sidebar:
+    st.header("Find the Weather in Your City")
+    city_name =st.text_input("City")
+    if city_name in world_data['city'].values:
+        city_info = world_data[world_data['city'] == city_name].iloc[0]
+        st.write(f"Temperature in {city_name}: {city_info['temperatureF']} °F / {city_info['temperatureC']} °C")
+        st.write(f"Last Updated: {city_info['time']}")
